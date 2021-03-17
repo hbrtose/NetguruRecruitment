@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.navArgs
-import com.eniro.netgururecruitment.R
 import com.eniro.netgururecruitment.databinding.FragmentDetailBinding
 import com.eniro.netgururecruitment.presentation.base.BaseFragment
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -36,7 +35,7 @@ class DetailFragment : BaseFragment<FragmentDetailBinding, DetailViewModel>(Deta
             it.title = args.item.name
         }
         val mapFragment = SupportMapFragment.newInstance()
-        childFragmentManager.beginTransaction().replace(R.id.detail_map_container, mapFragment).commit()
+        childFragmentManager.beginTransaction().replace(binding.detailMapContainer.id, mapFragment).commit()
         mapFragment.getMapAsync { map ->
             map.animateCamera(CameraUpdateFactory
                 .newLatLngZoom(geocoder.getFromLocationName(args.item.name, 1)
