@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "510476862207",
+    "project_id": "netgururecruitment",
+    "storage_bucket": "netgururecruitment.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:510476862207:android:1b95508767d27a165e42ca",
+        "android_client_info": {
+          "package_name": "com.eniro.netgururecruitment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "510476862207-8ub9aeifqc9olng6dc4mbvk8c3kp56vu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEoit0Ivh8xrhBvmTxWkcTuz7ZE2fztos"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "510476862207-8ub9aeifqc9olng6dc4mbvk8c3kp56vu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
