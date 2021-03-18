@@ -11,7 +11,6 @@ object Dependencies {
     object Versions {
         const val gradle = "4.1.1"
         const val kotlin = "1.4.31"
-        const val playServicesGradle = "4.3.5"
 
         const val appcompat = "1.2.0"
         const val coreKtx = "1.3.2"
@@ -37,6 +36,7 @@ object Dependencies {
         const val appcompat = "androidx.appcompat:appcompat:${Versions.appcompat}"
         const val coreKtx = "androidx.core:core-ktx:${Versions.coreKtx}"
         const val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
+        const val fragment = "androidx.fragment:fragment-ktx:${Versions.appcompat}"
         const val material = "com.google.android.material:material:${Versions.material}"
 
         const val navigationFragment = "androidx.navigation:navigation-fragment-ktx:${Versions.navigationKtx}"

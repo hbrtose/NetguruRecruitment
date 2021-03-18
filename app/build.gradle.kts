@@ -42,6 +42,7 @@ dependencies {
     implementation(Dependencies.Libs.kotlin)
     implementation(Dependencies.Libs.coreKtx)
     implementation(Dependencies.Libs.appcompat)
+    implementation(Dependencies.Libs.fragment)
     implementation(Dependencies.Libs.constraintLayout)
     implementation(Dependencies.Libs.navigationFragment)
     implementation(Dependencies.Libs.navigationUi)

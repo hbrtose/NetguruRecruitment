@@ -12,7 +12,7 @@ import kotlin.reflect.KClass
 abstract class BaseFragment<V: ViewBinding, T : BaseViewModel>(vm: KClass<T>): Fragment() {
 
     protected val viewModel: T by viewModels(vm)
-    protected var binding: V? = null
+    private var binding: V? = null
         private set
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
