@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_land"
+    app:startDestination="@id/emptyFragment">
+
+    <fragment
+        android:id="@+id/emptyFragment"
+        android:name="com.eniro.netgururecruitment.presentation.base.EmptyFragment" >
+        <action
+            android:id="@+id/action_emptyFragment_to_detailFragment"
+            app:destination="@id/detailFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.eniro.netgururecruitment.presentation.detail.DetailFragment" >
+        <argument
+            android:name="item"
+            app:argType="com.eniro.netgururecruitment.data.ListItemData" />
+    </fragment>
+</navigation>

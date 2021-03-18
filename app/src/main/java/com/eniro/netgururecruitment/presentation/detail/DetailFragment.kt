@@ -33,11 +33,14 @@ class DetailFragment : BaseFragment<FragmentDetailBinding, DetailViewModel>(Deta
         }
         val mapFragment = SupportMapFragment.newInstance()
         childFragmentManager.beginTransaction().replace(binding.detailMapContainer.id, mapFragment).commit()
-        mapFragment.getMapAsync { map ->
-            viewModel.location.observe(viewLifecycleOwner) {
-                map.animateCamera(CameraUpdateFactory.newLatLngZoom(it, ZOOM_LEVEL), ANIMATION_TIME, null)
+        view?.let {
+            mapFragment.getMapAsync { map ->
+                viewModel.location.observe(viewLifecycleOwner) {
+                    map.animateCamera(CameraUpdateFactory.newLatLngZoom(it, ZOOM_LEVEL),
+                        ANIMATION_TIME, null)
+                }
+                viewModel.getLocation(args.item.toString())
             }
-            viewModel.getLocation(args.item.toString())
         }
     }
 }

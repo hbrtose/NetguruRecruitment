@@ -21,20 +21,27 @@ class ListViewModel @Inject constructor() : BaseViewModel() {
     private val _items = MutableLiveData<List<ListItemData>>()
     val items: LiveData<List<ListItemData>> = _items
     private val itemList = mutableListOf<ListItemData>()
+    private var display = false
 
-    fun run() {
+    init {
         Observable.interval(DELAY, TimeUnit.SECONDS)
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe {
-                itemList.add(
-                    ListItemData(MainData.cities.random(),
-                        MainData.colorMap[MainData.colors.random()]!!)
-                )
-                _items.value = itemList
+                if (display) {
+                    itemList.add(ListItemData(
+                            MainData.cities.random(),
+                            MainData.colorMap[MainData.colors.random()]!!,
+                            System.currentTimeMillis()))
+                    _items.value = itemList
+                }
             }.register()
     }
 
+    fun run() {
+        display = true
+    }
+
     fun stop() {
-        disposables.clear()
+        display = false
     }
 }

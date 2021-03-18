@@ -5,16 +5,20 @@ import android.os.Parcelable
 
 data class ListItemData(
     val name: String,
-    val color: Int
+    val color: Int,
+    val timestamp: Long
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString() ?: "",
-        parcel.readInt()
-    )
+        parcel.readInt(),
+        parcel.readLong()
+    ) {
+    }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(name)
         parcel.writeInt(color)
+        parcel.writeLong(timestamp)
     }
 
     override fun describeContents(): Int {
@@ -30,5 +34,4 @@ data class ListItemData(
             return arrayOfNulls(size)
         }
     }
-
 }

@@ -4,10 +4,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.RecyclerView
 import com.eniro.netgururecruitment.data.ListItemData
 import com.eniro.netgururecruitment.databinding.ItemListBinding
+import java.text.SimpleDateFormat
+import java.util.*
 
 class ListRecycler(liveData: LiveData<List<ListItemData>>,
                    owner: LifecycleOwner,
@@ -16,9 +17,9 @@ class ListRecycler(liveData: LiveData<List<ListItemData>>,
     private val items = mutableListOf<ListItemData>()
 
     init {
-        liveData.observe(owner, Observer {
+        liveData.observe(owner, {
             items.clear()
-            items.addAll(it)
+            items.addAll(it.sortedBy { item -> item.name })
             notifyDataSetChanged()
         })
     }
@@ -38,7 +39,15 @@ class ListRecycler(liveData: LiveData<List<ListItemData>>,
         fun bind(item: ListItemData, listener: (ListItemData) -> Unit) {
             binding.tvItem.text = item.name
             binding.tvItem.setTextColor(item.color)
+            binding.tvTimestamp.text = formatTime(item.timestamp)
             binding.root.setOnClickListener { listener(item) }
+        }
+
+        private fun formatTime(timestamp: Long) : String {
+            val calendar = Calendar.getInstance()
+            calendar.time = Date(timestamp)
+            val simpleDateFormat = SimpleDateFormat("dd-MMM-yyyy HH-mm-ss", Locale.getDefault())
+            return simpleDateFormat.format(calendar.time)
         }
     }
 }
