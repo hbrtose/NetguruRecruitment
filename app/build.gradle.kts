@@ -3,7 +3,6 @@ plugins {
     kotlin("android")
     kotlin("kapt")
     id("dagger.hilt.android.plugin")
-    id("androidx.navigation.safeargs.kotlin")
     id("com.google.secrets_gradle_plugin") version "0.5"
 }
 
@@ -44,8 +43,6 @@ dependencies {
     implementation(Dependencies.Libs.appcompat)
     implementation(Dependencies.Libs.fragment)
     implementation(Dependencies.Libs.constraintLayout)
-    implementation(Dependencies.Libs.navigationFragment)
-    implementation(Dependencies.Libs.navigationUi)
     implementation(Dependencies.Libs.hilt)
     implementation(Dependencies.Libs.hiltViewModel)
     implementation(Dependencies.Libs.rxAndroid)

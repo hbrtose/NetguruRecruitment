@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.activityViewModels
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.eniro.netgururecruitment.R
 import com.eniro.netgururecruitment.databinding.FragmentListBinding
@@ -25,11 +24,7 @@ class ListFragment : BaseFragment<FragmentListBinding, ListViewModel>(ListViewMo
 
     override fun onBound(binding: FragmentListBinding) {
         val adapter = ListRecycler(viewModel.items, this) {
-            if (requireContext().resources.getBoolean(R.bool.is_tablet_land)) {
-                navigationViewModel.navigate(it)
-            } else {
-                findNavController().navigate(ListFragmentDirections.actionListFragmentToDetailFragment(it))
-            }
+            navigationViewModel.navigate(it)
         }
         binding.listRecycler.layoutManager = LinearLayoutManager(context)
         binding.listRecycler.adapter = adapter

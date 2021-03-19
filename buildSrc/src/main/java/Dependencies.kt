@@ -15,7 +15,6 @@ object Dependencies {
         const val appcompat = "1.2.0"
         const val coreKtx = "1.3.2"
         const val constraintLayout = "2.0.2"
-        const val navigationKtx = "2.1.0"
         const val hilt = "2.33-beta"
         const val androidxHilt = "1.0.0-alpha03"
         const val rxKotlin = "2.3.0"
@@ -38,9 +37,6 @@ object Dependencies {
         const val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
         const val fragment = "androidx.fragment:fragment-ktx:${Versions.appcompat}"
         const val material = "com.google.android.material:material:${Versions.material}"
-
-        const val navigationFragment = "androidx.navigation:navigation-fragment-ktx:${Versions.navigationKtx}"
-        const val navigationUi = "androidx.navigation:navigation-ui-ktx:${Versions.navigationKtx}"
 
         const val rxKotlin = "io.reactivex.rxjava2:rxkotlin:${Versions.rxKotlin}"
         const val rxAndroid = "io.reactivex.rxjava2:rxandroid:${Versions.rxAndroid}"

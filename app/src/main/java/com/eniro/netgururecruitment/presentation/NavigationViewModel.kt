@@ -10,10 +10,14 @@ import javax.inject.Inject
 @HiltViewModel
 class NavigationViewModel @Inject constructor() : BaseViewModel() {
 
-    private val _currentDetail = MutableLiveData<ListItemData>()
-    val currentDetail: LiveData<ListItemData> = _currentDetail
+    private val _currentDetail = MutableLiveData<ListItemData?>()
+    val currentDetail: LiveData<ListItemData?> = _currentDetail
 
     fun navigate(direction: ListItemData) {
         _currentDetail.value = direction
+    }
+
+    fun pop() {
+        _currentDetail.value = null
     }
 }
